@@ -5,6 +5,9 @@ import json
 import os
 import numpy as np
 import tensorflow as tf
+import speech_recognition as sr
+import pyttsx3
+
 
 import model, sample, encoder
 
@@ -69,11 +72,28 @@ def interact_model(
         ckpt = tf.train.latest_checkpoint(os.path.join(models_dir, model_name))
         saver.restore(sess, ckpt)
 
+        r = sr.Recognizer()
+        raw_text = ''
+
+
+
         while True:
-            raw_text = input("Model prompt >>> ")
+            engine = pyttsx3.init()
+            engine.say("Please tell your Model Prompt")
+            engine.runAndWait()
+
+            with sr.Microphone() as source:
+                audio = r.listen(source)
+                words = r.recognize_google(audio)
+                raw_text = words
+                engine.say("You are waiting for HER to respond to ".format(raw_text))
+                engine.runAndWait()
+                # print ("You said:{}".format(raw_text))
+
             while not raw_text:
                 print('Prompt should not be empty!')
-                raw_text = input("Model prompt >>> ")
+                raw_text = words
+
             context_tokens = enc.encode(raw_text)
             generated = 0
             for _ in range(nsamples // batch_size):
@@ -83,9 +103,14 @@ def interact_model(
                 for i in range(batch_size):
                     generated += 1
                     text = enc.decode(out[i])
+                    engine = pyttsx3.init()
+                    engine.say(text)
+                    engine.runAndWait()
                     print("=" * 40 + " SAMPLE " + str(generated) + " " + "=" * 40)
                     print(text)
             print("=" * 80)
+
+
 
 if __name__ == '__main__':
     fire.Fire(interact_model)
