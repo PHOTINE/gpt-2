@@ -9,6 +9,7 @@ function changeText(content, divID){
 
 var diagnosticPara = document.querySelector('.output');
 var testBtn = document.querySelector('button');
+var parsed_input
 
 function testSpeech() {
   var recognition = new SpeechRecognition();
@@ -23,6 +24,7 @@ function testSpeech() {
   recognition.onresult = function(event) {
     var speechResult = event.results[0][0].transcript.toLowerCase();
     textContent = speechResult
+    parsed_input = speechResult
     diagnosticPara.textContent = 'Speech received: ' + speechResult + '.';
     console.log('Confidence: ' + event.results[0][0].confidence);
   }

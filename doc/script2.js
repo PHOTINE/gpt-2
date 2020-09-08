@@ -1,11 +1,11 @@
- $(function () {
+ $(function (parsed_input) {
     $('#gen-form').submit(function (e) {
       e.preventDefault();
       $.ajax({
         type: "POST",
         url: "https://gpt2-speech-khtp5ecknq-uc.a.run.app/",
         dataType: "json",
-        data: JSON.stringify(testSpeech()),
+        data: JSON.stringify({ input_text: parsed_input}),
         beforeSend: function (data) {
           $('#generate-text').addClass("is-loading");
           $('#generate-text').prop("disabled", true);

@@ -6,7 +6,9 @@ import os
 import numpy as np
 import tensorflow as tf
 
-import model, sample, encoder
+import src.model as model
+import src.sample as sample
+import src.encoder as encoder
 
 
 def interact_model(
