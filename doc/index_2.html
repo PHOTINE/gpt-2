@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HER GPT-2</title>
+  <meta name="title" content="AI-Generated Text with GPT-2" />
+  <meta name="description" content="Generate text from OpenAI's GPT-2 model!" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:purple">
+  <div class="navbar-brand">
+    <span class="icon is-large">
+      <span class="fa-stack">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-robot fa-stack-1x fa-inverse"></i>
+      </span>
+    </span>
+    <div class="brand-text is-family-code is-uppercase has-text-weight-bold" style="color:white">HER-GPT</div>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu is-active">
+    <div class="navbar-start">
+      <div class="navbar-item" style="color:white">
+        HER Project: you can speak with AI. We are hoping to add additional functionality for our project.
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item is-hidden-touch">
+        <div class="buttons">
+          <a class="button is-light" href="https://github.com/addadda023/DJT-speech-generator" target="_blank">
+            <span class="icon">
+              <i class="fab fa-lg fa-github"></i>
+            </span><span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<body>
+  <section id="main" class="section">
+    <div class="container">
+      <div class="columns is-variable is-5">
+        <div class="column is-narrow" style="width: 250px;">
+          <id class="gen-form">
+              <div class="buttons">
+              <span class="control">
+                <button style="background-color:pink" type="submit" name="submit" id="generate-text" class="button is-link">
+                <span>Record</span></button>
+              </span>
+            </div>
+      <div class="buttons">
+              <span class="control">
+                <button style="background-color:red" type="submit" name="submit" id="generate-text" class="button is-link">
+                  <span> Listen  </span></button></span></button>
+              </span>
+            </div>
+      <div class="buttons">
+              <span class="control">
+                <button style="background-color:purple" type="submit" name="submit" id="generate-text" class="button is-link">
+                  <span> Stop </span></button>
+              </span>
+            </div>
+            <!--<div class="field">-->
+              <!--<label class="label"></label>-->
+              <!--<div class="control">-->
+                <!--<textarea id="prefix" class="textarea" type="text" placeholder="Beautiful" rows="2"></textarea>-->
+              <!--</div>-->
+              <!--<p class="help">Starts the generated text with the specified text. <em>(Optional: max 500 characters)</em></p>-->
+            <!--</div>-->
+            <!--<div class="field">-->
+              <!--<label class="label">Generated Text Length</label>-->
+              <!--<div class="control">-->
+                <!--<input id="length" class="input" type="text" placeholder="Text input" value="30">-->
+              <!--</div>-->
+              <!--<p class="help">Length of the text in tokens to generate. <em>(max: 1023)</em></p>-->
+            <!--</div>-->
+            <!--<div class="field">-->
+              <!--<label class="label">Temperature</label>-->
+              <!--<div class="control">-->
+                <!--<input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">-->
+              <!--</div>-->
+              <!--<p class="help">Controls the generated text "creativity." <em>(the higher the temperature, the more-->
+                  <!--creative)</em></p>-->
+            <!--</div>-->
+            <!--<div class="field">-->
+              <!--<label class="label">Top <em>k</em></label>-->
+              <!--<div class="control">-->
+                <!--<input id="top_k" class="input" type="text" placeholder="40" value="40">-->
+              <!--</div>-->
+              <!--<p class="help">Constrains the generated text tokens to the top <em>k</em> possibilities. <em>(set to 0 to-->
+                  <!--disable)</em></p>-->
+            <!--</div>-->
+            <!--<div class="buttons">-->
+              <!--<span class="control">-->
+                <!--<button type="submit" name="submit" id="generate-text" class="button is-link">-->
+                  <!--<span class="icon">-->
+                    <!--<i class="fas fa-md fa-pen"></i>-->
+                  <!--</span><span>Generate Text!</span></button>-->
+              <!--</span>-->
+            <!--</div>-->
+          <!--</form>-->
+          <div id="extra-buttons" class="buttons">
+            <span class="control">
+              <button id="save-image" class="button is-success" style="background-color:blue" >
+                <span class="icon">
+                  <i class="fas fa-md fa-save"></i>
+                </span><span>Save </span></button>
+            </span>
+             <span class="control">
+              <button id="clear-text" class="button is-danger">
+                <span class="icon">
+                  <i class="fas fa-md fa-trash-alt"></i>
+                </span><span>Clear Texts</span</button> </span> </div> </div> <div id="model-output" class="column">
+                  <p id="tutorial" class="subtitle"><em>Generated rally speech will appear here.
+                      Use the form to configure GPT-2 and press <strong>Generate Text</strong>
+                      to generate your DJT rally speech!
+                    </em></p>
+          </div>
+
+        </div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Made using <a href="https://github.com/minimaxir/gpt-2-simple" target="_blank"><strong>gpt-2-simple</strong></a>. 
+        Original GPT-2 conditional sample by
+          href="https://openai.com" target="_blank">OpenAI</a>. This website content
+        is licensed <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
+      </p>
+    </div>
+  </footer>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+
+<script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js">
+</script>
+<script src="script.js"></script>
+<script src="script2.js"></script>
+
+</html>
+
