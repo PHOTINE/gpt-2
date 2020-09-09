@@ -17,7 +17,7 @@
     <span class="icon is-large">
       <span class="fa-stack">
         <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-robot fa-stack-1x fa-inverse"></i>
+        <i class="fad fa-user-robot"></i>
       </span>
     </span>
     <div class="brand-text is-family-code is-uppercase has-text-weight-bold" style="color:white">HER-GPT</div>
@@ -25,13 +25,13 @@
   <div id="navbarBasicExample" class="navbar-menu is-active">
     <div class="navbar-start">
       <div class="navbar-item" style="color:white">
-        HER Project: you can speak with AI. We are hoping to add additional functionality for our project.
+        HER Project: you can speak to her - wait for a minute until the model return the out.
       </div>
     </div>
     <div class="navbar-end">
       <div class="navbar-item is-hidden-touch">
         <div class="buttons">
-          <a class="button is-light" href="https://github.com/addadda023/DJT-speech-generator" target="_blank">
+          <a class="button is-light" href="https://github.com/PHOTINE/hergpt" target="_blank">
             <span class="icon">
               <i class="fab fa-lg fa-github"></i>
             </span><span>GitHub</span>
@@ -47,14 +47,15 @@
     <div class="container">
       <div class="columns is-variable is-5">
         <div class="column is-narrow" style="width: 250px;">
-          <id class="gen-form">
+
               <div class="buttons">
               <span class="control">
                 <button style="background-color:pink" type="submit" name="submit" id="generate-text" class="button is-link">
                 <span>Record</span></button>
+
               </span>
             </div>
-      <div class="buttons">
+           <div class="buttons">
               <span class="control">
                 <button style="background-color:red" type="submit" name="submit" id="generate-text" class="button is-link">
                   <span> Listen  </span></button></span></button>
@@ -116,10 +117,23 @@
               <button id="clear-text" class="button is-danger">
                 <span class="icon">
                   <i class="fas fa-md fa-trash-alt"></i>
-                </span><span>Clear Texts</span</button> </span> </div> </div> <div id="model-output" class="column">
-                  <p id="tutorial" class="subtitle"><em>Generated rally speech will appear here.
-                      Use the form to configure GPT-2 and press <strong>Generate Text</strong>
-                      to generate your DJT rally speech!
+                </span>
+
+                <span>Clear Texts</span> </button>
+             </span>
+
+<!--          </div> <div class="column">-->
+                 <form id class="gen-form">
+
+                   <div class="column">
+                     <p class="output"> </p>
+                   </div>
+
+                  </form>
+<!--      </div>-->
+
+
+              <div id="model-output"> <p id="tutorial" class="subtitle"><em>
                     </em></p>
           </div>
 
@@ -130,15 +144,16 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        Made using <a href="https://github.com/minimaxir/gpt-2-simple" target="_blank"><strong>gpt-2-simple</strong></a>. 
-        Original GPT-2 conditional sample by
-          href="https://openai.com" target="_blank">OpenAI</a>. This website content
-        is licensed <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
+        <ol>
+        <b> This project made by: </b>
+            <a href="https://github.com/minimaxir/gpt-2-cloud-run" target="_blank"><strong>Gpt-2-Cloud-Run</strong></a> <i> for the web-interface and cloud integration.</i> </li>
+            <a href="https://github.com/openai/gpt-2" target="_blank"><strong>OpenAI GPT-2</strong></a> <i> for pre-trained model.</i> </li>
+            <a href="https://github.com/mdn/web-speech-api" target="_blank"><strong>Web-Speech-Api/</strong></a><i> for web-speech recognition and speech synthesis.</i> </li>
+        </ol>
+        <p> This website content is licensed <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>. </p>
       </p>
     </div>
   </footer>
-
-
 </body>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -148,7 +163,6 @@
 <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js">
 </script>
 <script src="script.js"></script>
-<script src="script2.js"></script>
 
 </html>
 

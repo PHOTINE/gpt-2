@@ -1,11 +1,15 @@
  $(function (parsed_input) {
+    console.log(parsed_input)
     $('#gen-form').submit(function (e) {
+
       e.preventDefault();
       $.ajax({
         type: "POST",
-        url: "https://gpt2-speech-khtp5ecknq-uc.a.run.app/",
+        url: "https://hergpt-iwktphxjoq-uw.a.run.app",
         dataType: "json",
-        data: JSON.stringify({ input_text: parsed_input}),
+        data: JSON.stringify({"input_text": parsed_input}),
+
+//        data: JSON.stringify(getOutputValues);
         beforeSend: function (data) {
           $('#generate-text').addClass("is-loading");
           $('#generate-text').prop("disabled", true);
