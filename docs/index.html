@@ -1,4 +1,67 @@
 <!DOCTYPE html>
+<style>
+
+html,
+body {
+  height: 95% !important;
+  margin: 0 !important;
+}
+
+img {
+display: inline-block;
+}
+
+header
+{
+  background-color:#ECF3F3;
+}
+
+footer {
+  /*max-height: 5% !important;*/
+  padding: 1em !important
+}
+
+section {
+  min-height: 95% !important
+}
+
+.gen-box {
+  background-color: #fff;
+  display: block;
+  padding: 1.25rem;
+  color: #4a4a4a;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+
+.gen-border {
+  height: 0.25em;
+  background-color: #d5d5d5;
+}
+
+.gen-box.warning {
+  color: red;
+  font-weight: 700;
+
+}
+
+.brand-text {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em
+}
+
+#extra-buttons {
+  padding-top: 1em;
+  margin-top: 1em;
+  border-top: 0.5px solid #d5d5d5;
+  border-top: 0.5px solid #d5d5d5;
+}
+
+</style>
+
 
 <html>
 <head>
@@ -45,17 +108,23 @@
 <body>
   <section id="main" class="section">
     <div class="container">
-      <div class="columns is-variable is-5">
-        <div class="column is-narrow" style="width: 250px;">
+      <div class="row">
+        <div class="column">
 
+
+           <div class="field">
               <div class="buttons">
               <span class="control">
                 <button style="background-color:pink" type="submit" name="submit" id="generate-text" class="button is-link">
-                <span>Record</span></button>
-
+                <span>Record<br></span></button>  <br>
               </span>
-            </div>
-           <div class="buttons">
+              </div>
+          </div>
+
+
+                <!-- <div class="columns is-variable is-5"> -->
+                  <!-- <div class="column is-narrow" style="width: 250px;"> -->
+           <!-- <div class="buttons">
               <span class="control">
                 <button style="background-color:red" type="submit" name="submit" id="generate-text" class="button1 is-link">
                   <span> Listen  </span></button></span></button>
@@ -66,7 +135,7 @@
                 <button style="background-color:purple" type="submit" name="submit" id="generate-text" class="button2 is-link">
                   <span> Stop </span></button>
               </span>
-            </div>
+            </div> -->
             <!--<div class="field">-->
               <!--<label class="label"></label>-->
               <!--<div class="control">-->
@@ -106,38 +175,50 @@
               <!--</span>-->
             <!--</div>-->
           <!--</form>-->
-          <div id="extra-buttons" class="buttons">
-            <span class="control">
-              <button id="save-image" class="button is-success" style="background-color:blue" >
-                <span class="icon">
-                  <i class="fas fa-md fa-save"></i>
-                </span><span>Save </span></button>
-            </span>
+          <div class="field">
+            <div class="buttons">
+              <span class="control">
+                <button id="save-image" class="button is-success" style="background-color:blue" >
+                  <span class="icon">
+                    <i class="fas fa-md fa-save"></i>
+                  </span><span>Save <br> </span></button>
+                <br>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
              <span class="control">
               <button id="clear-text" class="button is-danger">
                 <span class="icon">
                   <i class="fas fa-md fa-trash-alt"></i>
                 </span>
-
-                <span>Clear Texts</span> </button>
+              <span>Clear Texts</span>
              </span>
-
-<!--          </div> <div class="column">-->
-                 <form id class="gen-form">
-
-                   <div class="column">
-                     <p class="output"> </p>
-                   </div>
-
-                  </form>
-<!--      </div>-->
-
-
-              <div id="model-output"> <p id="tutorial" class="subtitle"><em>
-                    </em></p>
           </div>
 
-        </div>
+      </div>
+
+
+<!--          </div> <div class="column">-->
+
+          <div class="column"><form id class="gen-form"> <p class="output"> </p> </div></form>
+
+<!--      </div>-->
+
+          <div>
+
+            <div id="model-output">
+            <p id="tutorial" class="subtitle"><em><img src='./img/her.jpg' style="max-width:60%;" >
+            </em></p>
+            </div>
+          </div>
+
+
+    </div>
+  </div>
+
+
 
   </section>
 
@@ -165,4 +246,3 @@
 <script src="script.js"></script>
 
 </html>
-
