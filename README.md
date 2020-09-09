@@ -2,6 +2,8 @@
 
 This model created by using Google Web Speech API, OpenAI-GPT-2 pre-trainded model and Max Wolf (GPT-Cloud-Run). I did not fine-tune the model in this version but I am planning to realize the fined-tuned version in the near future. 
 
+You can find the demo here https://photine.github.io/hergpt/.
+
 
 
 
