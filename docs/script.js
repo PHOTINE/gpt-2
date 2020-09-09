@@ -16,11 +16,12 @@
  function submit_ajax_post (parsed_input) {
     console.log("Submitted data is")
     console.log(parsed_input)
+    console.log(JSON.stringify({"input_text": parsed_input}))
     $.ajax({
       type: "POST",
       url: "https://gpt-iwktphxjoq-nn.a.run.app",
       dataType: "json",
-      data: JSON.stringify({input_text: parsed_input}),
+      data: JSON.stringify({"input_text": parsed_input}),
 
 //        data: JSON.stringify(getOutputValues);
       beforeSend: function (data) {
