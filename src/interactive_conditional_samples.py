@@ -5,6 +5,10 @@ import json
 import os
 import numpy as np
 import tensorflow as tf
+import os, sys
+dir_path = os.path.dirname(os.path.realpath(__file__))
+parent_dir_path = os.path.abspath(os.path.join(dir_path, os.pardir))
+sys.path.insert(0, parent_dir_path)
 
 import src.model as model
 import src.sample as sample

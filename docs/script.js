@@ -1,28 +1,26 @@
- function listen(gentext){
+ var synth = window.speechSynthesis;
 
-  gentext = '';
-  var synth = window.speechSynthesis;
+ function speak(gentext){
+  
+  var msg = new SpeechSynthesisUtterance(gentext);
+  synth.speak(msg); 
 
-  var utterThis = new SpeechSynthesisUtterance(gentext);
-  synth.speak(utterThis);
-  // gentext.blur();
 
  } 
 
- function stop(gentext) {
-
-    var stop = new SpeechSynthesis.pause(gentext);
-    synth.pause();
- }
+ function stop() {
+  console.log("should be stopping");
+  synth.cancel(); 
+}
 
  function submit_ajax_post (parsed_input) {
     console.log("Submitted data is")
     console.log(parsed_input)
     $.ajax({
       type: "POST",
-      url: "https://hergpt-iwktphxjoq-uw.a.run.app",
+      url: "https://gpt-iwktphxjoq-nn.a.run.app",
       dataType: "json",
-      data: JSON.stringify({"input_text": parsed_input}),
+      data: JSON.stringify({input_text: parsed_input}),
 
 //        data: JSON.stringify(getOutputValues);
       beforeSend: function (data) {
@@ -44,7 +42,7 @@
         var gentext = gentext.replace(/\n\n/g, "<div><br></div>").replace(/\n/g, "<div></div>");
         var html = '<div class=\"gen-box\">' + gentext + '</div><div class="gen-border"></div>';
         $(html).appendTo('#model-output').hide().fadeIn("slow");
-        speak_this_shit(gentext)
+        speak(gentext)
       },
       error: function (jqXHR, textStatus, errorThrown) {
         $('#generate-text').removeClass("is-loading");
@@ -202,7 +200,7 @@ function testSpeech() {
 }
 
 testBtn.addEventListener('click', testSpeech);
-testBtn1.addEventListener('click', listen);
+// testBtn1.addEventListener('click', listen);
 testBtn2.addEventListener('click', stop);
 
 

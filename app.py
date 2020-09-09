@@ -36,10 +36,10 @@ async def homepage(request):
         seed=None,
         nsamples=1,
         batch_size=1,
-        length=params.get('length', 128),
-        temperature=float(params.get('temperature', 0.7)),
+        length=None,
+        temperature=float(params.get('temperature', 1.0)),
         top_k=int(params.get('top_k', 0)),
-        top_p=float(params.get('top_p', 0)),
+        top_p=float(params.get('top_p', 1)),
         models_dir='models',
     )
 
