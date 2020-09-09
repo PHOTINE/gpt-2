@@ -60,6 +60,14 @@ section {
   border-top: 0.5px solid #d5d5d5;
 }
 
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
 </style>
 
 
@@ -77,10 +85,10 @@ section {
 
 <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:purple">
   <div class="navbar-brand">
-    <span class="icon is-large">
+    <!-- <span class="icon is-large"> -->
       <span class="fa-stack">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fad fa-user-robot"></i>
+        <!-- <i class="fas fa-circle fa-stack-2x"></i> -->
+        <!-- <i class="fad fa-user-robot"></i> -->
       </span>
     </span>
     <div class="brand-text is-family-code is-uppercase has-text-weight-bold" style="color:white">HER-GPT</div>
@@ -195,24 +203,31 @@ section {
                 </span>
               <span>Clear Texts</span>
              </span>
+
           </div>
+
+          <div>
+         <form id class="gen-form"> <p class="output"> </p></form>
+         </div>
 
       </div>
 
 
 <!--          </div> <div class="column">-->
 
-          <div class="column"><form id class="gen-form"> <p class="output"> </p> </div></form>
+
 
 <!--      </div>-->
 
-          <div>
+            <div class="column">
 
-            <div id="model-output">
-            <p id="tutorial" class="subtitle"><em><img src='./img/her.jpg' style="max-width:60%;" >
-            </em></p>
+              <div id="model-output">
+              <p id="tutorial" class="subtitle"><em><img src='./img/her.jpg' style="max-width:100%;" >
+              </em></p>
+              </div>
             </div>
-          </div>
+
+
 
 
     </div>
