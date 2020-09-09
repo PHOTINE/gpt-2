@@ -8,6 +8,25 @@
 
  } 
 
+function findByText(rootElement, text){
+    var filter = {
+        acceptNode: function(node){
+            // look for nodes that are text_nodes and include the following string.
+            if(node.nodeType === document.TEXT_NODE && node.nodeValue.includes(text)){
+                 return NodeFilter.FILTER_ACCEPT;
+            }
+            return NodeFilter.FILTER_REJECT;
+        }
+    }
+    var nodes = [];
+    var walker = document.createTreeWalker(rootElement, NodeFilter.SHOW_TEXT, filter, false);
+    while(walker.nextNode()){
+       //give me the element containing the node
+       nodes.push(walker.currentNode.parentNode);
+    }
+    return nodes;
+}
+
  function stop() {
   console.log("should be stopping");
   synth.cancel(); 
@@ -111,8 +130,8 @@ function changeText(content, divID){
 
 var diagnosticPara = document.querySelector('.output');
 var testBtn = document.querySelector('button');
-var testBtn1 = document.querySelector('button');
-var testBtn2 = document.querySelector('button');
+// var testBtn1 = findByText(document.body,'SomeText');
+var testBtn2 = findByText(document.body,'Clear Texts')[0];
 var parsed_input
 
 function testSpeech() {
